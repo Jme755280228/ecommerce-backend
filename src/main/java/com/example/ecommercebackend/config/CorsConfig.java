@@ -9,9 +9,9 @@ public class CorsConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/api/**") // /api/ အောက်မှာရှိတဲ့ APIs တွေ အားလုံးကို ခွင့်ပြု
-                .allowedOrigins("http://localhost:8081") // Frontend ရဲ့ URL
-                .allowedMethods("GET", "POST", "PUT", "DELETE") // အသုံးပြုခွင့်ပေးမယ့် HTTP Methods တွေ
+        registry.addMapping("/api/**")
+                .allowedOrigins("http://localhost:8081")
+                .allowedMethods("GET", "POST", "PUT", "DELETE") // POST method ပါဝင်ဖို့ လိုအပ်
                 .allowCredentials(true);
     }
 }

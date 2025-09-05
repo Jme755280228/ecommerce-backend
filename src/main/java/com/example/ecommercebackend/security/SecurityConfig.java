@@ -13,11 +13,11 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-            .csrf(csrf -> csrf.disable()) // CSRF ကို ပိတ်ထားခြင်း
+            .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(authorize -> authorize
-                .requestMatchers("/api/jobs/**").permitAll() // /api/jobs အောက်က path အားလုံးကို ဝင်ခွင့်ပြု
-                .requestMatchers("/api/applicants/**").permitAll() // /api/applicants အောက်က path အားလုံးကို ဝင်ခွင့်ပြု
-                .anyRequest().authenticated() // ကျန်တဲ့ path တွေအတွက် authentication လိုအပ်
+                .requestMatchers("/api/jobs/**").permitAll()
+                .requestMatchers("/api/applicants").permitAll()
+                .anyRequest().authenticated()
             );
         return http.build();
     }
